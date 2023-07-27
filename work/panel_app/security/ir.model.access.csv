@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_proposal_user,ProposalUser,model_research_proposal,base.group_public,1,0,0,0
+access_proposal_portal,ProposalPortal,model_research_proposal,base.group_portal,1,0,0,0
+access_proposal_internal,ProposalInternal,model_research_proposal,base.group_user,1,1,1,1
+
+access_keyword_user,KeywordUser,model_research_proposal_keyword,base.group_public,1,0,0,0
+access_keyword_portal,KeywordPortal,model_research_proposal_keyword,base.group_portal,1,0,0,0
+access_keyword_internal,KeywordInternal,model_research_proposal_keyword,base.group_user,1,1,1,1
+
+access_category_user,CategoryUser,model_research_proposal_keyword_category,base.group_public,1,0,0,0
+access_category_portal,CategoryPortal,model_research_proposal_keyword_category,base.group_portal,1,0,0,0
+access_category_internal,CategoryInternal,model_research_proposal_keyword_category,base.group_user,1,1,1,1

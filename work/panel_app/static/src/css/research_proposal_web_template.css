@@ -1,0 +1,200 @@
+.list-group-item {
+    background-color: #fffefe;
+}
+
+.title {
+    font-weight: 100;
+}
+
+.title-filter {
+    font-weight: 600;
+}
+
+.card {
+    background-color: #f3f3f3;
+}
+
+.card-title-title {
+    display: inline-block;
+    margin: 8px;
+}
+
+.row {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.col-md-2 {
+    margin-top: 10px;
+}
+
+.filter-card {
+    background-color: #5ba7b7;
+}
+
+.filter-card-bottom {
+    background-color: #5ba7b7;
+    margin-top: 5px;
+}
+
+.button {
+    border: none;
+    padding: 8px 16px;
+    margin: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+  
+.button.selected {
+    background-color: #b2d2d9;
+    color: #10687a;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-container-link {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+.button-container-link i:first-child {
+    margin-right: 5px;
+    color: #7dbbc7;
+}
+.button-container-link i:first-child:hover {
+    color: #2f8596;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.small-btn {
+    width: auto;
+    height: 30px;
+    font-size: 10px;
+    padding: 0px 10px;
+}
+
+.small-btn-proposal {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background-color: #d7b1f6; 
+    color: #ffffff; 
+    font-size: 14px; 
+    padding: 6px 12px;
+    text-decoration: none; 
+    text-align: center;
+    cursor: pointer; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.small-btn-proposal:hover {
+    background-color: #b583df; /* Change background color on hover for a cute effect */
+}
+
+.small-btn-proposal.selected {
+    background-color: #644380;
+}
+
+.small-btn-proposal-contact {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background-color: #75aec2; 
+    color: #ffffff; 
+    font-size: 14px; 
+    padding: 6px 12px;
+    text-decoration: none; 
+    text-align: center;
+    cursor: pointer; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.small-btn-proposal-contact:hover {
+    background-color: #3f8ca8;
+}
+
+.small-btn-proposal-feedback {
+    background-color: #7d599c; 
+
+}
+
+.small-btn-proposal-feedback:hover {
+    background-color: #583776; 
+}
+
+
+.small-btn-proposal:focus {
+    outline: none;
+}
+
+.products_pager {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.left-btn {
+    margin-right: 10px;
+}
+
+.right-btn {
+    margin-left: 10px;
+}
+
+.page-number {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.filter-dropdown {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+a.button-like {
+    display: inline-block;
+    padding: 4px 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+a.button-learn-more {
+    display: inline-block;
+    padding: 2px 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+a.button-like:hover {
+    background-color: #eee;
+}
+
+a.button-learn-more {
+    background-color: #eee;
+}

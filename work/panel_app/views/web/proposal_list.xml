@@ -1,0 +1,57 @@
+<odoo>
+    <template id="proposal_list" name="proposal_list">
+        <script>
+            function redirectToContactProposal(proposalId) {
+                window.location.href = "/contact/proposal/" + proposalId;
+            }
+        </script>
+        <t t-foreach="proposals" t-as="res">
+            <div class="col-md-12 resources" 
+                >
+                <div class="card mb-4 box-shadow">
+                    <div class="row card-title">
+                        <div class="col-md-10 card-title-toggle">
+                            <h5 class="card-title-title"><t t-esc="res.name"/></h5>
+                            <!--<t t-esc="res.contact.name"/>--> - <font class="text-o-color-2" style="font-style: italic;">up to <t t-esc="res.expiration_date"/></font>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-end">
+                            <button class="small-btn-proposal-contact" style="text-align: center; display: block;" t-attf-data-proposal-id="{{res.id}}" onclick="redirectToContactProposal(this.getAttribute('data-proposal-id'))">
+                                CONTACT
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="description">
+                                        <t t-if="res.description">
+                                            <t t-esc="res.description[:400]"/>  
+                                            ...
+                                            <a t-attf-href="/research/proposal/{{res.id}}" class="button-learn-more">
+                                            learn more
+                                            </a>
+                                        </t>
+                                    </div>
+                                </li>
+                                <li class="list-group-item"><strong>Url: </strong><a t-att-href="res.web_link" t-att-target="'_blank'"><t t-esc="res.web_link"/></a></li>
+                                <li class="list-group-item"><strong>Tags: </strong>
+                                    <span t-foreach="res.keywords" t-as="keyword">
+                                        <span class="badge badge-secondary"><t t-esc="keyword.name"/></span>
+                                        <t t-if="not keyword==res.keywords[-1]">, </t>
+                                    </span>
+                                </li>
+                                <li class="list-group-item"><strong>Expiration Date: </strong><t t-esc="res.expiration_date"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+        <div class="products_pager col-md-12" t-att-data-max="total_items">
+            <button type="button" class="button left-btn">&lt;</button>
+            <span class="page-number"><t t-esc="page"/></span>
+            <button type="button" class="button right-btn">&gt;</button>
+        </div>
+    </template>
+</odoo>

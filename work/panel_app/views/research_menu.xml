@@ -1,0 +1,28 @@
+<odoo>
+	<!-- Resources App menu -->
+	<menuitem id="menu_research" name="Proposals" web_icon="research_proposal_app,static/description/icon.png"/>
+	<!-- Action to open the Resources list --> 
+ 	<record id="action_research_proposal" model="ir.actions.act_window">
+ 		<field name="name">Solar Panels</field>
+ 		<field name="res_model">research.proposal</field>
+ 		<field name="view_mode">tree,form</field>
+ 	</record>
+
+	<record id="action_research_proposal_keyword" model="ir.actions.act_window">
+ 		<field name="name">Keywords</field>
+ 		<field name="res_model">research.proposal.keyword</field>
+ 		<field name="view_mode">tree,form</field>
+ 	</record>
+
+	<record id="action_research_proposal_keyword_category" model="ir.actions.act_window">
+ 		<field name="name">Categories</field>
+ 		<field name="res_model">research.proposal.keyword.category</field>
+ 		<field name="view_mode">tree,form</field>
+ 	</record>
+
+ 	<!-- Menu item to open the Resources list -->
+ 	<menuitem id="menu_research_proposal" name="Proposals" parent="menu_research" action="action_research_proposal"/>
+	<menuitem id="menu_research_proposals" name="Proposals" parent="menu_research_proposal" action="action_research_proposal" sequence="1"/>
+	<menuitem id="menu_research_proposals_keywords" name="Keywords" parent="menu_research_proposal" action="action_research_proposal_keyword" sequence="2"/>
+	<menuitem id="menu_research_proposals_keywords_categories" name="Categories" parent="menu_research_proposal" action="action_research_proposal_keyword_category" sequence="3"/>
+</odoo>

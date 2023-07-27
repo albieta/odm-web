@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="website_menu_proposal" model="website.menu">
+            <field name="name">R&amp;I collaboration</field>
+            <field name="url">/research/proposal</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">10</field>
+            <field name="new_window" eval="False"/>
+        </record>
+    </data>
+</odoo>

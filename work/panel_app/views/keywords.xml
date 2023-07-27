@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="view_research_proposal_keywords_form" model="ir.ui.view">
+        <field name="name">research.proposal.keyword.form</field>
+        <field name="model">research.proposal.keyword</field>
+        <field name="arch" type="xml">
+            <form string="Keyword" class="oe_form_compact">
+                <sheet>
+                    <group>
+                        <field name="name" placeholder="Name"/>
+                        <field name="category"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

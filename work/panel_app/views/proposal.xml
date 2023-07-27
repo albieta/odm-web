@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="view_research_proposal_form" model="ir.ui.view">
+        <field name="name">research.proposal.form</field>
+        <field name="model">research.proposal</field>
+        <field name="arch" type="xml">
+            <form string="Solar Panels">
+                <sheet>
+                    <group>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Solar panel Title"/>
+                            </h1>
+                            <h2>
+                                <field name="contact" />
+                            </h2>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="description" placeholder="Description"/>
+                        <field name="web_link" widget="url"/>
+                        <field name="keywords" widget="many2many_tags" options="{'color_field': 'color', 'no_create': True, 'no_open': True}"/>
+                        <field name="expiration_date"/>
+                        <field name="validated"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

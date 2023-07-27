@@ -1,0 +1,13 @@
+
+<odoo>
+
+  <template id="form_contact_proposal" name="Form Contact Proposal">
+        <t t-call="website.contactus">
+            <!-- Add your modifications here -->
+            <xpath expr="//input[@name='name']" position="attributes">
+                <attribute name="t-att-value">proposal.name</attribute>
+                <attribute name="readonly">readonly</attribute>
+            </xpath>
+        </t>
+    </template>
+  </odoo>

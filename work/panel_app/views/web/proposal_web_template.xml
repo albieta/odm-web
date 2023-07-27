@@ -1,0 +1,99 @@
+<odoo>
+    <template id="proposal_web_template" name="proposal_web_template">
+        <t t-call="website.layout">
+	    <t t-set="title">Solar Panels</t>
+            <script>
+                function hasSessionCookie(cookieName) {
+                    var cookies = document.cookie.split('; ');
+                    for (var i = 0; i &lt; cookies.length; i++) {
+                        var parts = cookies[i].split('=');
+                        if (parts[0] === cookieName) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+
+                function redirectToCreateProposal() {
+                    var loggedIn = hasSessionCookie('session_id');
+                    
+                    if (loggedIn) {
+                        window.location.href = "/create-proposal";
+                    } else {
+                        window.location.href = "/web/login?redirect=/create-proposal";
+                    }
+                }
+
+                function redirectToGiveFeedback() {
+                    window.location.href = "/rate/4c25eb40848c4639a88bb4cc21ebab29/3";
+                }
+            </script>
+            <div class="container my-5">
+                <h3 style="text-align: left; margin-bottom: 30px;">
+                    <font class="text-o-color-2">Research and Innovation Proposals</font>
+                    <br/>
+                </h3>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <p style="text-align: justify;">
+                            <span style="color: rgb(55, 65, 81);" class="bg-white">Collaborative <strong>Research and Innovation</strong> Proposals Platform</span>
+                        </p>
+                    </div>
+                    <div class="col-md-7 d-flex justify-content-end" style="margin-bottom: 10px;">
+                        <button class="small-btn-proposal-contact small-btn-proposal-feedback" style="text-align: center; display: block;" onclick="redirectToCreateProposal()">
+                            CREATE A PROPOSAL
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 15px;">
+                    <div class="col-md-12 d-flex justify-content-end">
+                    <button class="small-btn-proposal-contact" style="text-align: center; display: block;" onclick="redirectToGiveFeedback()">
+                        GIVE US FEEDBACK ABOUT THE PLATFORM
+                    </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="col-md-6 mb-4" id="search-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="search-query" placeholder="Search proposals..."/>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" onclick="handleSearchForm()">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                
+                    <form class="col-md-6 mb-4" id="search-form">
+                        <span id="keywords" class="tags-list" placeholder="Search by tags..."></span>
+                    </form>
+                </div>
+                <div class="row col-md-12">
+                    <p style="text-align: justify; font-size: 15px;">
+                        <span style="color: rgb(177, 177, 179);" class="bg-white"><em>Filter by home partner institution...</em></span>
+                    </p>
+                </div>
+                <div class="row col-md-12 mb-4">
+                    <t t-foreach="universities" t-as="university">
+                        <t t-if="university['name'] == selectedUniversity">
+                            <button class="small-btn-proposal university-btn selected" t-att-data-university="university['name']">
+                                <t t-if="university['comercial']"><t t-esc="university['comercial']"/></t>
+                                <t t-if="not university['comercial']"><t t-esc="university['name']"/></t>
+                            </button>
+                        </t>
+                        <t t-if="university['name'] != selectedUniversity">
+                            <button class="small-btn-proposal university-btn" t-att-data-university="university['name']">
+                                <t t-if="university['comercial']"><t t-esc="university['comercial']"/></t>
+                                <t t-if="not university['comercial']"><t t-esc="university['name']"/></t>
+                            </button>
+                        </t>
+                        
+                    </t>
+                </div>
+
+                <div id="proposals-container" class="row">
+                    <t t-call="research_proposal_app.proposal_list"/>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

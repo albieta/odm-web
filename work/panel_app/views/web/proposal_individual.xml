@@ -1,0 +1,34 @@
+<odoo>
+    <template id="proposal_individual" name="proposal_individual">
+        <t t-call="website.layout">
+	    <t t-set="title">Solar Panels</t>
+            <script>
+                function redirectToContactProposal(proposalId) {
+                    window.location.href = "/contact/proposal/" + proposalId;
+                }
+            </script>
+            <div class="container my-5">
+                <t t-set="proposal" t-value="proposal" />
+
+                <div class="proposal-details">
+                    <h3><font class="text-o-color-2"><t t-esc="proposal.name" /></font></h3>
+                    <!--<h5><t t-esc="proposal.contact.name" /></h5>-->
+                    <p>
+                        <button class="small-btn-proposal-contact" style="text-align: center; display: block;" t-attf-data-proposal-id="{{proposal.id}}" onclick="redirectToContactProposal(this.getAttribute('data-proposal-id'))">
+                            CONTACT
+                        </button>
+                    </p>
+                    <p><strong>Description:</strong> <t t-esc="proposal.description" /></p>
+                    <p><strong>URL:</strong> <a t-att-href="proposal.web_link" t-att-target="'_blank'"><t t-esc="proposal.web_link" /></a></p>
+                    <p><strong>Tags:</strong>
+                        <span t-foreach="proposal.keywords" t-as="keyword">
+                            <span class="badge badge-secondary"><t t-esc="keyword.name"/></span>
+                            <t t-if="not keyword==proposal.keywords[-1]">, </t>
+                        </span>
+                    </p>
+                    <p><strong>Expiration Date:</strong> <t t-esc="proposal.expiration_date" /></p>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
