@@ -8,11 +8,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
 
       - name: Deploy to Server
         run: |
-          docker-compose up -d
-          #chmod +x script.sh
-          #./script.sh
+          touch a.txt
